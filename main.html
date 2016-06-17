@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <title>Lotto Numbers</title>
+    <link rel="stylesheet" href="lib/jquery.mobile-1.4.5/jquery.mobile-1.4.5.css" type="text/css"/>
+    <script src="lib/jquery-1.12.3.js" rel="script" type="application/javascript"></script>
+    <!--<script src="http://code.jquery.com/jquery-1.9.1.js"></script>-->
+    <script type="application/javascript" src="lib/jquery.mobile-1.4.5/jquery.mobile-1.4.5.js" rel="script"></script>
+    <link rel="stylesheet" href="lib/jquery.mobile-1.4.5/jquery.mobile.icons-1.4.5.css"/>
+    <link rel="stylesheet" type="text/css" href="lottoNumbers.css"/>
+    <script src="lottoNumbers.js" rel="script" type="application/javascript"></script>
+</head>
+<body>
+<div data-role="page" id="main" class="ui-page-active" data-dom-cache="true" data-theme="a">
+    <div data-role="header" class="ui-bar" data-theme="b">
+        <h3>Lotto Numbers</h3>
+        <a href="#setting" target="_self" class="ui-btn ui-icon-gear ui-btn-icon-notext ui-btn-corner-all"></a>
+    </div>
+    <div class="page">
+        <div data-role="content" class="ui-content">
+            <p>
+                Click to get random lotto numbers
+            </p>
+            <button onclick="getRandom()" id="btnRand" class="ui-btn ui-btn-corner-all ui-shadow ui-btn-inline">Get
+            </button>
+            <br>
+            <div class="randomCard">
+                <h2 id="randomTitle">The Lucky Number:</h2>
+                <p id="random"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div data-role="page" id="setting" data-dom-cache="true">
+    <div data-role="header" class="ui-bar" data-theme="b">
+        <h3>Setting</h3>
+        <a href="#main" target="_self" class="ui-btn ui-icon-home ui-btn-corner-all ui-btn-icon-notext">Home</a>
+    </div>
+    <div class="page">
+        <div data-role="content">
+
+            <!--<label for="digitBtn4"><h4>Digit:</h4></label>-->
+            <div data-role="controlgroup" data-type="horizontal" id="range" class="ui-btn-corner-all">
+                <button class="ui-btn ui-btn-corner-all" onclick="$(this).blur()">Digit</button>
+                <button id="digitBtn2" class="ui-btn ui-btn-corner-all" onclick="setDigit(10, 99)">2</button>
+                <button id="digitBtn3" class="ui-btn ui-btn-corner-all" onclick="setDigit(100, 999)">3</button>
+                <button id="digitBtn4" class="ui-btn ui-btn-corner-all" onclick="setDigit(1000, 9999)">4</button>
+                <button id="digitBtn5" class="ui-btn ui-btn-corner-all" onclick="setDigit(10000, 99999)">5</button>
+                <button id="digitBtn6" class="ui-btn ui-btn-corner-all" onclick="setDigit(100000, 999999)">6</button>
+            </div>
+            <br>
+            <div data-role="rangeslider" id="range-slider">
+                <label for="minInp"><h4>Range:</h4></label>
+                <input name="range-1a" id="minInp" min="1000" max="9999" value="1000" type="range" pattern="[0-9]*"/>
+                <label for="maxInp"><h4>Range:</h4></label>
+                <input name="range-1b" id="maxInp" min="1000" max="9999" value="9999" type="range" pattern="[0-9]*"/>
+            </div>
+            <br>
+            <button onclick="setMinMax()"
+                    class="ui-btn ui-btn-corner-all ui-shadow ui-btn-icon-right ui-icon-check ui-btn-inline">Set
+            </button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+<!--
+            <div class="">
+
+                &lt;!&ndash;<form name="settingForm" onsubmit="return false" class="ui-field-contain">&ndash;&gt;
+                <label for="chrNum">Digit number</label><input type="number" id="chrNum" class="" data-mini="true"
+                                                               data-clear-btn="true"/><br><br>
+
+                <label for="minInp">Min</label><input type="number" id="minInp" data-mini="true"/><br><br>
+                <label for="maxInp">Max</label><input type="number" id="maxInp" data-mini="true"/><br><br>
+                &lt;!&ndash;</form>&ndash;&gt;
+            </div>
+            <div class="ui-grid-b">
+                <div class="ui-block-a"></div>
+                <div class="ui-block-b">
+
+                </div>
+                <div class="ui-block-c"></div>
+            </div>
+-->

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <title>Setting</title>
+    <link rel="stylesheet" href="lib/jquery.mobile-1.4.5/jquery.mobile-1.4.5.css" type="text/css"/>
+    <script src="lib/jquery-1.12.3.js" rel="script" type="application/javascript"></script>
+    <!--<script src="http://code.jquery.com/jquery-1.9.1.js"></script>-->
+    <script type="application/javascript" src="lib/jquery.mobile-1.4.5/jquery.mobile-1.4.5.js" rel="script"></script>
+    <script src="lottoNumbers.js" rel="script" type="application/javascript"></script>
+</head>
+<body>
+
+<div data-role="page" id="home" data-dom-cache="true">
+    <div data-role="header">
+        <h3>Setting</h3>
+        <a href="main.html" target="_self" class="ui-btn ui-icon-home ui-btn-corner-all ui-btn-icon-notext">Home</a>
+    </div>
+    <div data-role="content">
+        <div data-role="rangeslider">
+            <label for="range-1a">Range:</label>
+            <input name="range-1a" id="range-1a" min="10000" max="99999" value="10000" type="range" />
+            <label for="range-1b">Range:</label>
+            <input name="range-1b" id="range-1b" min="10000" max="99999" value="99999" type="range" />
+
+        </div>
+        <label for="digitBtn4">Digit:</label>
+        <div data-role="controlgroup" data-type="horizontal">
+            <input type="button" value="4" id="digitBtn4" class="ui-btn ui-btn-corner-all"/>
+            <input type="button" value="5" id="digitBtn5" class="ui-btn ui-btn-corner-all"/>
+            <input type="button" value="6" id="digitBtn6" class="ui-btn ui-btn-corner-all"/>
+            <input type="button" value="7" id="digitBtn7" class="ui-btn ui-btn-corner-all"/>
+            <input type="button" value="8" id="digitBtn8" class="ui-btn ui-btn-corner-all"/>
+
+        </div>
+        <div class="">
+
+            <!--<form name="settingForm" onsubmit="return false" class="ui-field-contain">-->
+            <label for="chrNum">Digit number</label><input type="number" id="chrNum" class="" data-mini="true"
+                                                           data-clear-btn="true"/><br><br>
+
+            <label for="minInp">Min</label><input type="number" id="minInp" data-mini="true"/><br><br>
+            <label for="maxInp">Max</label><input type="number" id="maxInp" data-mini="true"/><br><br>
+            <!--</form>-->
+        </div>
+        <div class="ui-grid-b">
+            <div class="ui-block-a"></div>
+            <div class="ui-block-b">
+                <button onclick="setMinMax()"
+                        class="ui-btn ui-btn-corner-all ui-shadow ui-btn-icon-right ui-icon-check">Set
+                </button>
+            </div>
+            <div class="ui-block-c"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

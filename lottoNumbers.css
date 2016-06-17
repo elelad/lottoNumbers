@@ -1,0 +1,43 @@
+
+.page{
+    max-width: 800px;
+    min-width: 300px;
+    /*min-height: 80%;*/
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+    margin: 10px 5px 5px 5px;
+    /*border: solid thin;
+    box-shadow: 4px 4px 5px rgba(0,0,0,0.4);
+    border-radius: 5px;
+    border-color: rgba(0,0,0,0.2);*/
+    line-height: 1.8em;
+}
+
+#minInp, #maxInp{
+    width: 50px;
+}
+
+.randomCard{
+    background: linear-gradient(rgba(0, 0 ,255, 0.4), rgba(0,0,255,0.8));
+    margin-top: 15px;
+    color: white;
+    padding: 15px;
+    box-shadow: 4px 4px 5px rgba(0,0,0,0.4);
+    border-radius: 8px;
+    border-color: rgba(0,0,0,0.2);
+    display: inline-block;
+    width: inherit;
+}
+
+#random{
+    font-size: 3em;
+    font-weight: 700;
+}
+
+.ui-bar{
+    background: linear-gradient(rgba(0, 0 ,255, 0.4), rgba(0,0,255,0.8));
+    color: white;
+    border: none;
+}
