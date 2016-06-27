@@ -3,6 +3,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="shortcut icon" sizes="196x196" href="lottoNunmbersLogo.png">
     <title>Lotto Numbers</title>
     <link rel="stylesheet" href="lib/jquery.mobile-1.4.5/jquery.mobile-1.4.5.css" type="text/css"/>
     <script src="lib/jquery-1.12.3.js" rel="script" type="application/javascript"></script>
@@ -23,7 +25,7 @@
             <p>
                 Click to get random lotto numbers
             </p>
-            <button onclick="getRandom()" id="btnRand" class="ui-btn ui-btn-corner-all ui-shadow ui-btn-inline">Get
+            <button onclick="LOTTO.getRandom()" id="btnRand" class="ui-btn ui-btn-corner-all ui-shadow ui-btn-inline">Get
             </button>
             <br>
             <div class="randomCard">
@@ -45,11 +47,11 @@
             <!--<label for="digitBtn4"><h4>Digit:</h4></label>-->
             <div data-role="controlgroup" data-type="horizontal" id="range" class="ui-btn-corner-all">
                 <button class="ui-btn ui-btn-corner-all" onclick="$(this).blur()">Digit</button>
-                <button id="digitBtn2" class="ui-btn ui-btn-corner-all" onclick="setDigit(10, 99)">2</button>
-                <button id="digitBtn3" class="ui-btn ui-btn-corner-all" onclick="setDigit(100, 999)">3</button>
-                <button id="digitBtn4" class="ui-btn ui-btn-corner-all" onclick="setDigit(1000, 9999)">4</button>
-                <button id="digitBtn5" class="ui-btn ui-btn-corner-all" onclick="setDigit(10000, 99999)">5</button>
-                <button id="digitBtn6" class="ui-btn ui-btn-corner-all" onclick="setDigit(100000, 999999)">6</button>
+                <button id="digitBtn2" class="ui-btn ui-btn-corner-all" onclick="LOTTO.setDigit(10, 99)">2</button>
+                <button id="digitBtn3" class="ui-btn ui-btn-corner-all" onclick="LOTTO.setDigit(100, 999)">3</button>
+                <button id="digitBtn4" class="ui-btn ui-btn-corner-all" onclick="LOTTO.setDigit(1000, 9999)">4</button>
+                <button id="digitBtn5" class="ui-btn ui-btn-corner-all" onclick="LOTTO.setDigit(10000, 99999)">5</button>
+                <button id="digitBtn6" class="ui-btn ui-btn-corner-all" onclick="LOTTO.setDigit(100000, 999999)">6</button>
             </div>
             <br>
             <div data-role="rangeslider" id="range-slider">
@@ -59,7 +61,7 @@
                 <input name="range-1b" id="maxInp" min="1000" max="9999" value="9999" type="range" pattern="[0-9]*"/>
             </div>
             <br>
-            <button onclick="setMinMax()"
+            <button onclick="LOTTO.setMinMax()"
                     class="ui-btn ui-btn-corner-all ui-shadow ui-btn-icon-right ui-icon-check ui-btn-inline">Set
             </button>
         </div>

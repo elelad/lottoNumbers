@@ -2,7 +2,12 @@
  * Created by Elad on 14/06/2016.
  */
 
-function getRandom() {
+
+window.addEventListener("load", function() { window. scrollTo(0, 0); });
+
+LOTTO = {};
+
+LOTTO.getRandom = function() {
     var min = 10000;
     var max = 99999;
     (localStorage.getItem("min") != null && localStorage.getItem("min") != "")? min = parseInt(localStorage.getItem("min")) : min = 10000;
@@ -11,9 +16,9 @@ function getRandom() {
     document.getElementById("random").innerHTML = Math.round(Math.random()*(max - min)+min);
     $("#btnRand").text("Try again");
     $(".randomCard").fadeIn(700);
-}
+};
 
-function setMinMax() {
+LOTTO.setMinMax = function() {
     let min = document.getElementById("minInp").value;
     let max = document.getElementById("maxInp").value;
     localStorage.setItem("min", min);
@@ -21,21 +26,21 @@ function setMinMax() {
     $("#btnRand").text("Get");
     $(".randomCard").hide();
     $("body").pagecontainer( "change", "#main", {transition: "fadeout(500)", showLoadMsg: true});
-}
+};
 
-function setDigit(digitNumMin,digitNumMax) {
+LOTTO.setDigit = function(digitNumMin,digitNumMax) {
     localStorage.setItem("digitNumMin", digitNumMin);
     localStorage.setItem("digitNumMax", digitNumMax);
     let tempStr = digitNumMax.toString();
     tempStr = tempStr.length;
     localStorage.setItem("digit", tempStr);
-    setFromLocalStorge();
+    LOTTO.setFromLocalStorge();
     $("#minInp").attr("min", digitNumMin).attr("max", digitNumMax).val(digitNumMin);
     $("#maxInp").attr("min", digitNumMin).attr("max", digitNumMax).val(digitNumMax);
     $("div#range-slider").rangeslider("refresh");
-}
+};
 
-function setFromLocalStorge(event) {
+LOTTO.setFromLocalStorge = function(event) {
     for (let i=2; i<=6; i++){
         $("#digitBtn" + i).removeClass("ui-btn-active");
     }
@@ -48,9 +53,10 @@ function setFromLocalStorge(event) {
     //$("#minInp").attr("min", digitNumMin).attr("max", digitNumMax).val(parseInt(min));
     //$("#maxInp").attr("min", digitNumMin).attr("max", digitNumMax).val(parseInt(max));
     //$("div#range-slider").rangeslider("refresh");
-}
+};
 
-$(document).on("pagechange", setFromLocalStorge);
+
+$(document).on("pagechange", LOTTO.setFromLocalStorge);
 
 $(document).ready(function () {
     $(".randomCard").hide();
